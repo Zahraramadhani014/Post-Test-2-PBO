@@ -43,23 +43,60 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 > 
 >  Data transaksi itu sendiri dimodelkan oleh Transaksi.java di paket com.mycompany.posttest2pbo.model, yang hanya berisi struktur atribut (id, tanggal, keterangan, jenis, kategori, metodePembayaran, jumlah) dengan modifier private, constructor untuk menginisialisasi objek, serta getter–setter public agar akses data tetap terkontrol. Alurnya sederhana: App memanggil TransaksiService, dan TransaksiService mengelola kumpulan objek Transaksi, sehingga pola MVC ringan terpenuhi dengan pemisahan paket sesuai fungsinya.
 > 
-3. Penjelasan properties
+2. Penjelasan properties
    
    <img width="372" height="206" alt="image" src="https://github.com/user-attachments/assets/b15cf25f-1a5e-48a8-9637-d9dbe106175a" />
 
-> Pada program "Pocket Guard" ini terdapat 6 properties yaitu: "
+> Pada program "Pocket Guard" ini terdapat 6 properties yaitu: "id", "tanggal", "keterangan", "jenis", "kategori", "metode pembayaran", dan "jumlah"
 >
 > Pada kelas Transaksi, setiap baris private adalah properti/atribut data milik satu transaksi: id (int) sebagai identitas unik; tanggal (String) untuk waktu transaksi dengan format yyyy-mm-dd; keterangan untuk deskripsi singkat; jenis menandai Pemasukan atau Pengeluaran; kategori mengelompokkan seperti Gaji, Makan, Transportasi, dan lain-lain; metodePembayaran menyatakan Cash/E-Wallet/Transfer; dan jumlah (double) menyimpan nominal. Semua dibuat private untuk enkapsulasi agar akses dan perubahan dilakukan lewat getter–setter, sehingga data aman dan valid.
 
-5. Menerapkan constructor
-6. Menerapkan access modifier
-7. Menerapkan packages, memisahkan class berdasarkan fungsinya
-    - packages main > isinya adalah kode yang menyimpan menu user
-    - packages service > menyimpan kode logika CRUD
-    - packages model > menyimpan struktur data seperti atribut dan constructor
-8. Melanjutkan project yang sudah dibuat di Post Test 1.
+3. Penjelasan constructor
+   
+   <img width="766" height="225" alt="image" src="https://github.com/user-attachments/assets/c7cf604e-d6fe-4b73-8b39-a9a9b42530c9" />
 
-9. Nilai Tambah :
+> Konstruktor Transaksi(...) adalah metode khusus yang namanya sama dengan kelas dan tidak punya tipe kembalian; ia dieksekusi otomatis saat membuat objek baru. Parameter yang diterima (id, tanggal, keterangan, jenis, kategori, metodePembayaran, jumlah) dipetakan ke atribut objek melalui kata kunci this, sehingga this.id = id; artinya nilai parameter id dimasukkan ke properti id milik objek. Dengan pola ini, setiap objek Transaksi selalu terbentuk dalam keadaan sudah terisi data lengkap dan konsisten. Contoh pemakaian: new Transaksi(1, "2025-09-01", "Gaji Bulanan", "Pemasukan", "Gaji", "Transfer", 5000000); akan langsung menghasilkan catatan transaksi yang siap digunakan tanpa perlu set nilai satu per satu.
+
+4. Penjelasan access modifier
+   
+   Berikut adalah beberapa access modifier yang saya gunakan pada program:
+   
+   a. Transaksi.Java
+
+   <img width="1140" height="857" alt="image" src="https://github.com/user-attachments/assets/d1804ef8-1907-434f-9f06-1ca9a15236f4" />
+
+   > Kelas Transaksi dideklarasikan public agar bisa dipakai lintas paket. Seluruh atribut—id, tanggal, keterangan, jenis, kategori, metodePembayaran, dan jumlah—bermodifier private untuk menerapkan enkapsulasi sehingga nilainya tidak bisa diubah langsung dari luar kelas. Nilai awal diisi melalui konstruktor public Transaksi(...), sedangkan akses dan perubahan data dilakukan lewat getter dan setter yang juga public. Dengan susunan ini, objek selalu dibuat dalam keadaan valid dan setiap perubahan melewati kontrol metode yang disediakan.
+
+   b. TransaksiService.Java
+   
+   <img width="591" height="157" alt="image" src="https://github.com/user-attachments/assets/71db12a2-d9dc-4132-8d2b-278cface7d0e" />
+   
+   <img width="440" height="98" alt="image" src="https://github.com/user-attachments/assets/0d78466b-f13f-4a89-a387-b20c93da268e" />
+
+   > TransaksiService dideklarasikan public supaya bisa dipanggil dari App meski berada di paket berbeda. Di dalam kelas ini, state seperti daftar dan input ditandai private agar tidak bisa diakses dari luar, dan diberi final supaya referensinya tidak diganti selama program berjalan; variabel kontrol seperti autoId dan batasPengeluaranBulanan juga private agar hanya logika di service yang boleh mengubahnya. Metode public void tambahCatatan() berfungsi sebagai antarmuka layanan yang dipanggil dari App, dan pola yang sama dipakai untuk operasi lain seperti lihat, ubah, hapus, ringkasan saldo, filter/search, set batas, hingga tampilkan tabel semuanya public karena menjadi API yang dipakai UI. Sementara itu, detail implementasi dan utilitas seperti tambahSeed, hitungTotalJenis, formatRupiah, findById, serta berbagai helper validasi input disembunyikan dengan private karena hanya digunakan secara internal. Dengan susunan ini, enkapsulasi terjaga: App cukup memanggil metode publik tanpa menyentuh data langsung, sedangkan data dan cara kerjanya tetap aman di dalam service.
+
+   c. App.Java
+   
+    <img width="605" height="74" alt="image" src="https://github.com/user-attachments/assets/eaaf08f4-c297-40b9-a97f-4a7c09ef09bd" />
+
+   > App dideklarasikan public agar bisa dijalankan dari luar paket, dan public static void main(String[] args) adalah titik masuk program di Java. Di dalamnya dibuat objek TransaksiService dengan new TransaksiService(); objek ini nanti dipakai untuk memanggil operasi publik seperti seed(), tambahCatatan(), lihatSemuaCatatan(), ubahCatatan(), hapusCatatan(), dan seterusnya melalui logika menu. Modifier public pada kelas dan method memastikan keduanya dapat dipanggil oleh runtime maupun kelas lain, sedangkan static pada main membuatnya bisa dieksekusi tanpa perlu membuat objek App.
+    
+6. Penjelasan packages, dengan memisahkan class berdasarkan fungsinya:
+    - packages main > isinya adalah kode yang menyimpan menu user
+
+      <img width="298" height="23" alt="image" src="https://github.com/user-attachments/assets/7db00e9f-91d9-4e3e-a1bf-13141128816d" />
+
+      
+    - packages service > menyimpan kode logika CRUD
+
+      <img width="319" height="22" alt="image" src="https://github.com/user-attachments/assets/91e647ee-a680-4c26-bc18-29dfa9e0a33f" />
+
+    - packages model > menyimpan struktur data seperti atribut dan constructor
+
+      <img width="325" height="23" alt="image" src="https://github.com/user-attachments/assets/83dff364-4006-4a8d-af4e-e19c95fb479f" />
+
+
+7. Nilai Tambah :
 - Menerapkan MVC (wajib menjelaskan strukur packages pada dokumentasi program).
 
 
