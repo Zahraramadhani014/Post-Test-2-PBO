@@ -26,7 +26,7 @@ Di dalam program, setiap catatan keuangan dapat diisi lengkap dengan tanggal, ke
 
 Aplikasi ini bisa menambah catatan baru, melihat seluruh daftar catatan, mengubah jika ada kekeliruan, atau menghapus catatan yang tidak diperlukan. Program juga dapat menampilkan ringkasan saldo (total pemasukan, total pengeluaran, dan selisihnya) sehingga kondisi keuangan mudah dipantau.
 
-Tersedia pula fitur filter catatan berdasarkan jenis, kategori, dan metode pembayaran, serta fitur search berdasarkan keterangan yang keterangan tersebut diinputkan dalam menu tambah catatan keuangan. Selain itu, batas pengeluaran bulanan dapat ditetapkan, bila pengeluaran melewati batas, program akan menampilkan peringatan agar pengelolaan uang lebih terkendali.
+Tersedia pula fitur filter catatan berdasarkan jenis, kategori, dan metode pembayaran, serta fitur search berdasarkan keterangan catatan. Selain itu, batas pengeluaran bulanan dapat ditetapkan, bila pengeluaran melewati batas, program akan menampilkan peringatan agar pengelolaan uang lebih terkendali.
 
 Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga keseimbangan keuangan, dan membiasakan pencatatan keuangan secara teratur.
 
