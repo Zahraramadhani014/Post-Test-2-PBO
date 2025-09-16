@@ -445,8 +445,7 @@ b. Filter per Kategori
   
   <img width="806" height="128" alt="image" src="https://github.com/user-attachments/assets/e1f5e12e-96f9-4907-a163-0068a9c9cc50" />
 
-
-  > Ketika memasukkan kategori yang tidak tersedia dalam daftar pilihan, misalnya sedekah, sistem akan menampilkan pesan bahwa tidak ada data dengan kategori tersebut. Dengan begitu, hanya kategori yang memang tercatat dalam sistem seperti gaji, makan, transportasi, hiburan, belanja, tabungan, atau tagihan yang dapat difilter. Setelah itu, tampilan akan kembali meminta untuk menginputkan kategori sesuai kategori yang ada.
+  > Ketika memasukkan kategori yang tidak tersedia dalam daftar pilihan, misalnya sedekah, sistem akan menampilkan pesan "Pilihan tidak valid. Pilihan yang valid: Gaji/Makan/Transportasi/Hiburan/Belanja/Tabungan/Tagihan". Dengan begitu, hanya kategori yang memang tercatat dalam sistem seperti gaji, makan, transportasi, hiburan, belanja, tabungan, atau tagihan yang dapat difilter. Setelah itu, tampilan akan kembali meminta untuk menginputkan kategori sesuai kategori yang ada.
 
 - Pada filter kategori, jika mengosongkan inputan "Masukkan Kategori (gaji, makan, transportasi, hiburan, belanja, tabungan, tagihan):", maka akan muncul pesan peringatan yaitu "Tidak boleh kosong. Coba lagi", dan akan diminta untuk menginputkan ulang kategori yang ingin di filter.
 
