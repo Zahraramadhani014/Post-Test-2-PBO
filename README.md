@@ -35,18 +35,29 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
    
    <img width="416" height="181" alt="image" src="https://github.com/user-attachments/assets/e4f86337-d31c-4f65-a248-5c8884b513b9" />
 
-> Pada program "Pocket Guard" terdapat 3 
+> Pada program "Pocket Guard" ini terdapat 3 class, yaitu: App.Java, TransaksiService.Java, dan Transaksi.Java
+>
+> Pada struktur di atas, App.java di paket com.mycompany.posttest2pbo.main berperan sebagai titik masuk program sekaligus antarmuka teks sederhana: menampilkan menu utama dan meneruskan pilihan pengguna ke kelas layanan.
 > 
-3. Minimal terdapat 3 properties
-4. Menerapkan constructor
-5. Menerapkan access modifier
-6. Menerapkan packages, memisahkan class berdasarkan fungsinya
+> Seluruh logika bisnis ditempatkan di TransaksiService.java pada paket com.mycompany.posttest2pbo.service, mulai dari CRUD, ringkasan saldo, pengaturan batas pengeluaran, filter dan fitur search, sampai utilitas tampilan tabel serta validasi input. Khusus menu Ubah, input kosong (langsung Enter) dibiarkan untuk mempertahankan nilai lama, sedangkan pada tambah, filter, dan set batas, input kosong ditolak agar data tetap bersih.
+> 
+>  Data transaksi itu sendiri dimodelkan oleh Transaksi.java di paket com.mycompany.posttest2pbo.model, yang hanya berisi struktur atribut (id, tanggal, keterangan, jenis, kategori, metodePembayaran, jumlah) dengan modifier private, constructor untuk menginisialisasi objek, serta getter–setter public agar akses data tetap terkontrol. Alurnya sederhana: App memanggil TransaksiService, dan TransaksiService mengelola kumpulan objek Transaksi, sehingga pola MVC ringan terpenuhi dengan pemisahan paket sesuai fungsinya.
+> 
+3. Penjelasan 3 properties
+
+Pada 
+
+   <img width="372" height="206" alt="image" src="https://github.com/user-attachments/assets/b15cf25f-1a5e-48a8-9637-d9dbe106175a" />
+
+5. Menerapkan constructor
+6. Menerapkan access modifier
+7. Menerapkan packages, memisahkan class berdasarkan fungsinya
     - packages main > isinya adalah kode yang menyimpan menu user
     - packages service > menyimpan kode logika CRUD
     - packages model > menyimpan struktur data seperti atribut dan constructor
-7. Melanjutkan project yang sudah dibuat di Post Test 1.
+8. Melanjutkan project yang sudah dibuat di Post Test 1.
 
-8. Nilai Tambah :
+9. Nilai Tambah :
 - Menerapkan MVC (wajib menjelaskan strukur packages pada dokumentasi program).
 
 
