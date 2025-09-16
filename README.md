@@ -43,11 +43,11 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 > 
 >  Data transaksi itu sendiri dimodelkan oleh Transaksi.java di paket com.mycompany.posttest2pbo.model, yang hanya berisi struktur atribut (id, tanggal, keterangan, jenis, kategori, metodePembayaran, jumlah) dengan modifier private, constructor untuk menginisialisasi objek, serta getter–setter public agar akses data tetap terkontrol. Alurnya sederhana: App memanggil TransaksiService, dan TransaksiService mengelola kumpulan objek Transaksi, sehingga pola MVC ringan terpenuhi dengan pemisahan paket sesuai fungsinya.
 > 
-3. Penjelasan 3 properties
-
-Pada 
-
+3. Penjelasan properties
+   
    <img width="372" height="206" alt="image" src="https://github.com/user-attachments/assets/b15cf25f-1a5e-48a8-9637-d9dbe106175a" />
+
+> 
 
 5. Menerapkan constructor
 6. Menerapkan access modifier
