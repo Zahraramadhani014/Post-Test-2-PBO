@@ -30,18 +30,23 @@ Tersedia pula fitur filter catatan berdasarkan jenis, kategori, dan metode pemba
 
 Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga keseimbangan keuangan, dan membiasakan pencatatan keuangan secara teratur.
 
-### ~ Penjelasan Kode Program  ~
+### ~ Penjelasan Program  ~
 1. Penjelasan 3 class
-2. Minimal terdapat 3 properties
-3. Menerapkan constructor
-4. Menerapkan access modifier
-5. Menerapkan packages, memisahkan class berdasarkan fungsinya
+   
+   <img width="416" height="181" alt="image" src="https://github.com/user-attachments/assets/e4f86337-d31c-4f65-a248-5c8884b513b9" />
+
+> Pada program "Pocket Guard" terdapat 3 
+> 
+3. Minimal terdapat 3 properties
+4. Menerapkan constructor
+5. Menerapkan access modifier
+6. Menerapkan packages, memisahkan class berdasarkan fungsinya
     - packages main > isinya adalah kode yang menyimpan menu user
     - packages service > menyimpan kode logika CRUD
     - packages model > menyimpan struktur data seperti atribut dan constructor
-6. Melanjutkan project yang sudah dibuat di Post Test 1.
+7. Melanjutkan project yang sudah dibuat di Post Test 1.
 
-7. Nilai Tambah :
+8. Nilai Tambah :
 - Menerapkan MVC (wajib menjelaskan strukur packages pada dokumentasi program).
 
 
@@ -100,7 +105,7 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 
 > Ketika menginputkan angka 1 pada menu utama maka akan diarahkan ke menu "Tambah Catatan Keuangan" seperti yang tertera pada gambar di atas
 
-<img width="905" height="217" alt="image" src="https://github.com/user-attachments/assets/cb715ebe-5e17-4511-ae2b-66bccd306636" />>
+<img width="905" height="217" alt="image" src="https://github.com/user-attachments/assets/cb715ebe-5e17-4511-ae2b-66bccd306636" />
 
 > Setelah itu bakal diminta untuk menginputkan "Tanggal", "Keterangan", "Jenis Transaksi", "Kategori Transaksi", "Metode Pembayaran", serta "Nominal Transaksi". Ketika berhasil menambahkan data baru akan muncul pesan "Data Berhasil Ditambahkan"
 
