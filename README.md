@@ -361,13 +361,13 @@ Setelah berhasil menghapus data, sistem akan menampilkan pertanyaan "Apakah Ingi
 <img width="628" height="514" alt="image" src="https://github.com/user-attachments/assets/655b7415-3cac-417f-8ba4-846db2ef18c7" />
 
 
-> Ketika menginputkan angka 6 pada menu utama, sistem akan menampilkan Menu Filter dan Search. Pada menu ini tersedia beberapa pilihan filter dan search (berdasarkan keterangan), untuk pilihan filter yaitu ada filter per jenis transaksi (pemasukan atau pengeluaran), filter per kategori, dan filter per metode pembayaran. Selain itu, juga tersedia opsi untuk kembali ke menu sebelumnya. Melalui menu ini, catatan keuangan dapat disaring sesuai kriteria tertentu agar informasi yang ditampilkan lebih fokus dan mudah dipahami.
+> Ketika menginputkan angka 6 pada menu utama, sistem akan menampilkan menu filter/search. Pada menu ini tersedia beberapa pilihan filter dan search (berdasarkan keterangan), untuk pilihan filter yaitu ada filter per jenis transaksi (pemasukan atau pengeluaran), filter per kategori, dan filter per metode pembayaran. Selain itu, juga tersedia opsi untuk kembali ke menu sebelumnya. Melalui menu ini, catatan keuangan dapat disaring sesuai kriteria tertentu agar informasi yang ditampilkan lebih fokus dan mudah dipahami.
 
 a. Filter per Jenis (Pemasukan/Pengeluaran) 
 
   <img width="685" height="294" alt="image" src="https://github.com/user-attachments/assets/0a5138b5-f668-47ae-9423-3923062de9c9" />
 
-  > Setelah memilih opsi 1. Filter per Jenis (Pemasukan/Pengeluaran) pada menu filter catatan, sistem akan menampilkan tampilan baru bertuliskan Filter berdasarkan Jenis. Pada tahap ini, sistem meminta input jenis transaksi yang ingin difilter, apakah termasuk pemasukan atau pengeluaran. Input tersebut akan digunakan untuk menampilkan daftar catatan keuangan sesuai jenis yang dipilih sehingga data lebih terfokus.
+  > Setelah memilih opsi 1. Filter per Jenis (Pemasukan/Pengeluaran) pada menu filter/search, sistem akan menampilkan tampilan baru bertuliskan Filter berdasarkan Jenis. Pada tahap ini, sistem meminta input jenis transaksi yang ingin difilter, apakah termasuk pemasukan atau pengeluaran. Input tersebut akan digunakan untuk menampilkan daftar catatan keuangan sesuai jenis yang dipilih sehingga data lebih terfokus.
 
 - Pemasukan
   
@@ -397,7 +397,7 @@ b. Filter per Kategori
   <img width="716" height="288" alt="image" src="https://github.com/user-attachments/assets/f9e842f5-eea3-434f-9940-27be111e86d7" />
 
 
-  > Ketika memilih opsi Filter per Kategori pada menu filter catatan, sistem akan menampilkan pilihan untuk memasukkan kategori transaksi. Kategori yang tersedia antara lain gaji, makan, transportasi, hiburan, belanja, tabungan, dan tagihan. Setelah kategori dimasukkan, sistem akan menampilkan catatan transaksi yang sesuai dengan kategori tersebut dalam bentuk tabel, sehingga lebih mudah untuk melihat pengeluaran atau pemasukan berdasarkan kategori tertentu.
+  > Ketika memilih opsi Filter per Kategori pada menu filter/search, sistem akan menampilkan pilihan untuk memasukkan kategori transaksi. Kategori yang tersedia antara lain gaji, makan, transportasi, hiburan, belanja, tabungan, dan tagihan. Setelah kategori dimasukkan, sistem akan menampilkan catatan transaksi yang sesuai dengan kategori tersebut dalam bentuk tabel, sehingga lebih mudah untuk melihat pengeluaran atau pemasukan berdasarkan kategori tertentu.
 
 - Kategori gaji
   
@@ -456,7 +456,7 @@ c. Filter per Metode Pembayaran
    <img width="678" height="293" alt="image" src="https://github.com/user-attachments/assets/62430ead-a506-4378-a6c2-53ff27f83d65" />
 
 
-  > Ketika memilih menu Filter per Metode Pembayaran, sistem akan menampilkan opsi untuk memasukkan metode pembayaran, yaitu Cash, E-Wallet, atau Transfer.
+  > Ketika memilih menu Filter per Metode Pembayaran pada menu filter/search, sistem akan menampilkan opsi untuk memasukkan metode pembayaran, yaitu Cash, E-Wallet, atau Transfer.
 
 - Cash
   
@@ -479,7 +479,6 @@ c. Filter per Metode Pembayaran
 - Selain yang ada di pilihan metode pembayaran
   
  <img width="675" height="114" alt="image" src="https://github.com/user-attachments/assets/02fbf1c0-e75e-452b-8695-04aa5240e6e7" />
-
 
   > Ketika pada menu filter dimasukkan metode pembayaran yang tidak tersedia, misalnya “Kartu debit”, sistem akan langsung menampilkan pesan bahwa "Pilihan tidak valid. Pilihan yang valid: Cash/E-Wallet/Transfer". Setelah itu, sistem akan menampilkan untuk meminta ulang input metode pembayaran yang tersedia.
 
