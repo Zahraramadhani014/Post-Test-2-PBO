@@ -518,11 +518,18 @@ f. Jika menginputkan selain menu 1-5
 
   > Apabila pada menu filter dimasukkan angka di luar pilihan 1 sampai 5, sistem akan langsung menampilkan pesan “Pilihan tidak valid”. Setelah itu, menu filter catatan ditampilkan kembali sehingga dapat memilih opsi yang benar sesuai dengan daftar yang tersedia. Hal ini memastikan agar hanya input yang sesuai dengan menu yang bisa diproses oleh sistem.
 
-f. Jika menginputkan menu pakai huruf bukan angka
+g. Jika menginputkan menu pakai huruf bukan angka
 
   <img width="627" height="223" alt="image" src="https://github.com/user-attachments/assets/0da41826-f2a1-4983-b749-a9f45bef5db1" />
 
   > Apabila pada menu filter dimasukkan huruf alih-alih angka, sistem akan langsung menolak input tersebut dengan menampilkan pesan “Harus angka! Silakan input ulang”. Dengan begitu, hanya input berupa angka yang valid sesuai pilihan menu 1 sampai 4 yang bisa diterima. Mekanisme ini dibuat untuk memastikan agar sistem tetap berjalan sesuai alur yang benar dan menghindari kesalahan input.
+
+h. Jika mengosongkan input pada menu
+
+<img width="642" height="221" alt="image" src="https://github.com/user-attachments/assets/cd658bc2-873a-428e-8b33-469f9fa152e4" />
+
+Maka akan muncul pesan "Harus angka! Silakan input ulang:".
+
 
 #### 7. Menu Set Batas Pengeluaran
 
@@ -541,6 +548,11 @@ f. Jika menginputkan menu pakai huruf bukan angka
 <img width="706" height="162" alt="image" src="https://github.com/user-attachments/assets/f7adb9fd-b96a-4b6f-8d75-068e41b4ae9e" />
 
 > Ketika batas pengeluaran diatur dengan nilai 0, sistem akan secara otomatis menonaktifkan fitur pembatasan pengeluaran bulanan. Setelah itu, ditampilkan pesan konfirmasi berupa “Batas pengeluaran bulanan dinonaktifkan” sebagai tanda bahwa pengaturan sebelumnya tidak lagi berlaku. Untuk kembali ke menu utama, cukup mengetik angka 0 sesuai instruksi yang diberikan sistem.
+
+<img width="688" height="150" alt="image" src="https://github.com/user-attachments/assets/04b689b2-6cb4-4ff9-be2d-d9f1fe62f9a1" />
+
+> Ketika mengosongkan input "Masukkan batas baru (ketik 0 untuk menonaktifkan):", makan akan muncul pesan "Tidak boleh kosong. Coba lagi", sehingga hanya boleh mengisi batas pengeluaran terbaru atau ketik 0 untuk menonaktifkan.
+
 
 #### 8. Menu Keluar
 
