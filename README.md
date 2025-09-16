@@ -30,7 +30,23 @@ Tersedia pula fitur filter catatan berdasarkan jenis, kategori, dan metode pemba
 
 Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga keseimbangan keuangan, dan membiasakan pencatatan keuangan secara teratur.
 
-### ~ Penjelasan Alur Program  ~
+### ~ Penjelasan Kode Program  ~
+1. Penjelasan 3 class
+2. Minimal terdapat 3 properties
+3. Menerapkan constructor
+4. Menerapkan access modifier
+5. Menerapkan packages, memisahkan class berdasarkan fungsinya
+    - packages main > isinya adalah kode yang menyimpan menu user
+    - packages service > menyimpan kode logika CRUD
+    - packages model > menyimpan struktur data seperti atribut dan constructor
+6. Melanjutkan project yang sudah dibuat di Post Test 1.
+
+7. Nilai Tambah :
+- Menerapkan MVC (wajib menjelaskan strukur packages pada dokumentasi program).
+
+
+
+### ~ Penjelasan Alur Program (Output Program)  ~
 
 <h1 align="center"><img width="391" height="303" alt="image" src="https://github.com/user-attachments/assets/aeb399a5-d4d6-4c3a-81ed-1a519dbf823e" /></h1>
 
