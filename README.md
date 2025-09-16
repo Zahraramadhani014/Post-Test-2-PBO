@@ -361,7 +361,7 @@ Setelah berhasil menghapus data, sistem akan menampilkan pertanyaan "Apakah Ingi
 <img width="628" height="514" alt="image" src="https://github.com/user-attachments/assets/655b7415-3cac-417f-8ba4-846db2ef18c7" />
 
 
-> Ketika menginputkan angka 6 pada menu utama, sistem akan menampilkan Menu Filter Catatan. Pada menu ini tersedia beberapa pilihan filter dan search (berdasarkan keterangan), untuk pilihan filter yaitu ada filter per jenis transaksi (pemasukan atau pengeluaran), filter per kategori, dan filter per metode pembayaran. Selain itu, juga tersedia opsi untuk kembali ke menu sebelumnya. Melalui menu ini, catatan keuangan dapat disaring sesuai kriteria tertentu agar informasi yang ditampilkan lebih fokus dan mudah dipahami.
+> Ketika menginputkan angka 6 pada menu utama, sistem akan menampilkan Menu Filter dan Search. Pada menu ini tersedia beberapa pilihan filter dan search (berdasarkan keterangan), untuk pilihan filter yaitu ada filter per jenis transaksi (pemasukan atau pengeluaran), filter per kategori, dan filter per metode pembayaran. Selain itu, juga tersedia opsi untuk kembali ke menu sebelumnya. Melalui menu ini, catatan keuangan dapat disaring sesuai kriteria tertentu agar informasi yang ditampilkan lebih fokus dan mudah dipahami.
 
 a. Filter per Jenis (Pemasukan/Pengeluaran) 
 
@@ -385,7 +385,7 @@ a. Filter per Jenis (Pemasukan/Pengeluaran)
   
   <img width="673" height="118" alt="image" src="https://github.com/user-attachments/assets/acb5f4f7-8f5a-42ed-bffe-0fa9d19d8970" />
 
-  > Jika pada filter jenis transaksi dimasukkan selain pilihan Pemasukan atau Pengeluaran, misalnya kata pendapatan, maka sistem tidak akan menemukan data yang sesuai. Pesan yang muncul adalah “Tidak ada data dengan jenis tersebut”. Setelah itu, sistem secara otomatis akan meminta input ulang yang benar yaitu "Pemasukan/Pengeluaran".
+  > Jika pada filter jenis transaksi dimasukkan selain pilihan Pemasukan atau Pengeluaran, misalnya kata pendapatan, maka sistem akan menampilkan pesan“ Pilihan tidak valid. Pilihan yang valid: Pemasukan/Pengeluaran”. Setelah itu, sistem secara otomatis akan meminta input ulang yang benar yaitu "Pemasukan/Pengeluaran".
 
 - Pada filter berdasarkan jenis, jika mengosongkan inputan "Masukan Jenis (Pemasukan/Pengeluaran). Maka akan muncul pesan peringatan yaitu "Tidak boleh kosong. Coba lagi", dan akan diminta untuk menginputkan ulang jenis yang ingin di filter.
 
@@ -457,7 +457,7 @@ c. Filter per Metode Pembayaran
    <img width="678" height="293" alt="image" src="https://github.com/user-attachments/assets/62430ead-a506-4378-a6c2-53ff27f83d65" />
 
 
-  > Ketika memilih menu Filter per Metode Pembayaran, sistem akan menampilkan opsi untuk memasukkan metode pembayaran, yaitu Cash, E-Wallet, atau Transfer. Jika yang dimasukkan bukan salah satu dari pilihan tersebut, sistem akan menampilkan pesan bahwa tidak ada data dengan metode pembayaran tersebut. Setelah itu, tampilan kembali diarahkan ke menu Filter Catatan, sehingga proses dapat dilanjutkan tanpa harus keluar dari program.
+  > Ketika memilih menu Filter per Metode Pembayaran, sistem akan menampilkan opsi untuk memasukkan metode pembayaran, yaitu Cash, E-Wallet, atau Transfer.
 
 - Cash
   
@@ -482,7 +482,7 @@ c. Filter per Metode Pembayaran
  <img width="675" height="114" alt="image" src="https://github.com/user-attachments/assets/02fbf1c0-e75e-452b-8695-04aa5240e6e7" />
 
 
-  > Ketika pada menu filter dimasukkan metode pembayaran yang tidak tersedia, misalnya “Kartu debit”, sistem akan langsung menampilkan pesan bahwa tidak ada data dengan metode tersebut. Setelah itu, sistem akan menampilkan untuk meminta ulang input metode pembayaran yang tersedia.
+  > Ketika pada menu filter dimasukkan metode pembayaran yang tidak tersedia, misalnya “Kartu debit”, sistem akan langsung menampilkan pesan bahwa "Pilihan tidak valid. Pilihan yang valid: Cash/E-Wallet/Transfer". Setelah itu, sistem akan menampilkan untuk meminta ulang input metode pembayaran yang tersedia.
 
 - Pada filter metode pembayaran, jika mengosongkan inputan "Masukkan Metode (Cash/E-Wallet/Transfer):", maka akan muncul pesan peringatan yaitu "Tidak boleh kosong. Coba lagi", dan akan diminta untuk menginputkan ulang metode pembayaran yang ingin di filter.
 
