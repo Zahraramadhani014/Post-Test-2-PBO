@@ -26,11 +26,12 @@ Di dalam program, setiap catatan keuangan dapat diisi lengkap dengan tanggal, ke
 
 Aplikasi ini bisa menambah catatan baru, melihat seluruh daftar catatan, mengubah jika ada kekeliruan, atau menghapus catatan yang tidak diperlukan. Program juga dapat menampilkan ringkasan saldo (total pemasukan, total pengeluaran, dan selisihnya) sehingga kondisi keuangan mudah dipantau.
 
-Tersedia pula fitur filter catatan berdasarkan jenis, kategori, dan metode pembayaran. Selain itu, batas pengeluaran bulanan dapat ditetapkan; bila pengeluaran melewati batas, program akan menampilkan peringatan agar pengelolaan uang lebih terkendali.
+Tersedia pula fitur filter catatan berdasarkan jenis, kategori, dan metode pembayaran, serta fitur search berdasarkan keterangan yang keterangan tersebut diinputkan dalam menu tambah catatan keuangan. Selain itu, batas pengeluaran bulanan dapat ditetapkan; bila pengeluaran melewati batas, program akan menampilkan peringatan agar pengelolaan uang lebih terkendali.
 
 Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga keseimbangan keuangan, dan membiasakan pencatatan keuangan secara teratur.
 
 ### ~ Penjelasan Program  ~
+
 1. Penjelasan 3 class
    
    <img width="416" height="181" alt="image" src="https://github.com/user-attachments/assets/e4f86337-d31c-4f65-a248-5c8884b513b9" />
@@ -42,7 +43,7 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 > Seluruh logika bisnis ditempatkan di TransaksiService.java pada paket com.mycompany.posttest2pbo.service, mulai dari CRUD, ringkasan saldo, pengaturan batas pengeluaran, filter dan fitur search, sampai utilitas tampilan tabel serta validasi input. Khusus menu Ubah, input kosong (langsung Enter) dibiarkan untuk mempertahankan nilai lama, sedangkan pada tambah, filter, dan set batas, input kosong ditolak agar data tetap bersih.
 > 
 >  Data transaksi itu sendiri dimodelkan oleh Transaksi.java di paket com.mycompany.posttest2pbo.model, yang hanya berisi struktur atribut (id, tanggal, keterangan, jenis, kategori, metodePembayaran, jumlah) dengan modifier private, constructor untuk menginisialisasi objek, serta getter–setter public agar akses data tetap terkontrol. Alurnya sederhana: App memanggil TransaksiService, dan TransaksiService mengelola kumpulan objek Transaksi, sehingga pola MVC ringan terpenuhi dengan pemisahan paket sesuai fungsinya.
-> 
+
 2. Penjelasan properties
    
    <img width="372" height="206" alt="image" src="https://github.com/user-attachments/assets/b15cf25f-1a5e-48a8-9637-d9dbe106175a" />
@@ -65,7 +66,7 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 
    <img width="1140" height="857" alt="image" src="https://github.com/user-attachments/assets/d1804ef8-1907-434f-9f06-1ca9a15236f4" />
 
-   > Kelas Transaksi dideklarasikan public agar bisa dipakai lintas paket. Seluruh atribut—id, tanggal, keterangan, jenis, kategori, metodePembayaran, dan jumlah—bermodifier private untuk menerapkan enkapsulasi sehingga nilainya tidak bisa diubah langsung dari luar kelas. Nilai awal diisi melalui konstruktor public Transaksi(...), sedangkan akses dan perubahan data dilakukan lewat getter dan setter yang juga public. Dengan susunan ini, objek selalu dibuat dalam keadaan valid dan setiap perubahan melewati kontrol metode yang disediakan.
+   > Kelas Transaksi dideklarasikan public agar bisa dipakai lintas paket. Seluruh atribut id, tanggal, keterangan, jenis, kategori, metodePembayaran, dan jumlah bermodifier private untuk menerapkan enkapsulasi sehingga nilainya tidak bisa diubah langsung dari luar kelas. Nilai awal diisi melalui konstruktor public Transaksi(...), sedangkan akses dan perubahan data dilakukan lewat getter dan setter yang juga public. Dengan susunan ini, objek selalu dibuat dalam keadaan valid dan setiap perubahan melewati kontrol metode yang disediakan.
 
    b. TransaksiService.Java
    
@@ -95,17 +96,28 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 
       <img width="325" height="23" alt="image" src="https://github.com/user-attachments/assets/83dff364-4006-4a8d-af4e-e19c95fb479f" />
 
+   > Struktur proyek dipisah ke tiga paket sesuai fungsinya. Paket com.mycompany.posttest2pbo.main menampung antarmuka konsol dan entry point aplikasi, yaitu kelas App yang menampilkan menu dan meneruskan pilihan pengguna. Paket com.mycompany.posttest2pbo.service berisi logika bisnis: seluruh operasi CRUD, validasi input, filter dan search, ringkasan saldo, pengaturan batas, serta utilitas tampilan tabel di sinilah proses data berlangsung tanpa bergantung pada UI. Paket com.mycompany.posttest2pbo.model menyimpan struktur data, yaitu kelas Transaksi dengan atribut, constructor, serta getter–setter. Pemisahan ini membuat kode rapi, mudah dirawat dan diuji, serta sesuai ketentuan tugas tentang packages berdasarkan fungsi.
 
-7. Nilai Tambah :
-- Menerapkan MVC (wajib menjelaskan strukur packages pada dokumentasi program).
-
-
+7. Penjelasan penerapan MVC
+   
+> 1. com.mycompany.posttest2pbo.model
+Berisi Model aplikasi, yaitu kelas Transaksi. Kelas ini menyimpan struktur data transaksi: seluruh atribut dibuat private (enkapsulasi), ada constructor untuk inisialisasi saat objek dibuat, serta getter–setter public untuk akses terkontrol. Paket ini tidak berisi logika bisnis murni representasi data.
+>
+> 2. com.mycompany.posttest2pbo.service
+Berisi Controller/Service yang mengeksekusi logika bisnis. Kelas TransaksiService mengelola daftar Transaksi (CRUD lengkap), validasi input, filter dan search, ringkasan saldo, pengaturan batas pengeluaran, serta utilitas tampilan tabel. Metode yang dipakai UI bersifat public (misal tambahCatatan, lihatSemuaCatatan, ubahCatatan, hapusCatatan, menuFilter, ringkasanSaldo, setBatasPengeluaran), sedangkan helper dan utilitas disembunyikan sebagai private.
+>
+> 3. com.mycompany.posttest2pbo.main
+Berisi View/entry point aplikasi. Kelas App menampilkan menu konsol dan menangani interaksi pengguna, lalu memanggil metode publik pada TransaksiService. Di sinilah program dimulai melalui public static void main(String[] args) yang membuat instance service dan menjalankan alur menu.
+>
+> Alur singkat
+Pengguna berinteraksi lewat App → App memanggil metode di TransaksiService → TransaksiService membuat/mengubah/membaca objek Transaksi di model dan mengembalikan hasil ke UI. Struktur ini memenuhi MVC sederhana dan memisahkan tanggung jawab dengan jelas.
 
 ### ~ Penjelasan Alur Program (Output Program)  ~
 
-<h1 align="center"><img width="391" height="303" alt="image" src="https://github.com/user-attachments/assets/aeb399a5-d4d6-4c3a-81ed-1a519dbf823e" /></h1>
+<h1 align="center"><img width="369" height="306" alt="image" src="https://github.com/user-attachments/assets/9aaa0cd6-68b4-4dd0-903c-988aa4aedf47" /></h1>
 
-> Saat program dijalankan, muncul pesan pembuka “SELAMAT DATANG DI POCKET GUARD – Aplikasi Catatan Keuangan Harian Anda”. Setelah itu tampil Menu Utama berisi pilihan untuk menambah catatan, melihat daftar catatan, mengubah atau menghapus catatan, menampilkan ringkasan saldo, memfilter catatan (berdasarkan jenis, kategori, atau metode pembayaran), menetapkan batas pengeluaran bulanan, serta opsi keluar untuk mengakhiri program.
+
+> Saat program dijalankan, muncul pesan pembuka “SELAMAT DATANG DI POCKET GUARD – Aplikasi Catatan Keuangan Harian Anda”. Setelah itu tampil Menu Utama berisi pilihan untuk menambah catatan, melihat daftar catatan, mengubah atau menghapus catatan, menampilkan ringkasan saldo, memfilter catatan (berdasarkan jenis, kategori, atau metode pembayaran) dan searching berdasarkan keterangan, menetapkan batas pengeluaran bulanan, serta opsi keluar untuk mengakhiri program.
 >
 > ### ✨ Penjelasan Masing-Masing Menu ✨
 > 
@@ -129,15 +141,17 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 >    
 >    Menampilkan ringkasan keuangan berupa total pemasukan, total pengeluaran, dan saldo akhir (selisih antara pemasukan dan pengeluaran). Dengan menu ini kondisi keuangan bisa dipantau secara cepat.
 >    
-> 6. Filter Catatan
+> 6. Filter dan Search
 >    
->    Menu ini menampilkan sub-menu filter yang bisa digunakan untuk menyaring catatan keuangan berdasarkan:
+>    Menu ini menampilkan sub-menu filter dan search (berdasarkan keterangan) yang bisa digunakan untuk menyaring catatan keuangan berdasarkan:
 >    
 >    a. Jenis (pemasukan/pengeluaran)
 >    
 >    b. Kategori (makan, transportasi, hiburan, belanja, tabungan, dll.)
 >    
 >    c. Metode pembayaran (cash, e-wallet, transfer)
+>
+>    d. Search (cari berdasarkan keterangan)
 >
 >    Fitur ini mempermudah pencarian data tertentu agar lebih spesifik.
 >    
@@ -184,6 +198,10 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
 - Selain validasi input angka, pada menu "Tambah Catatan Keuangan", setiap kali catatan pengeluaran baru ditambahkan, sistem akan otomatis menghitung ulang total seluruh pengeluaran. Jika total pengeluaran tersebut melebihi batas bulanan yang sudah ditentukan sebelumnya, maka aplikasi akan langsung menampilkan peringatan agar anggaran tetap terkontrol, seperti yang terlihat pada gambar di bawah ini.
   
   <img width="1061" height="586" alt="image" src="https://github.com/user-attachments/assets/26b2b15c-c5ed-4aae-a019-1fb9122c2e78" />
+
+- Selain validasi input angka, pada menu "Tambah Catatan Keuangan", setiap kali mengosongkan inputan "misal mengosongkan input tanggal", maka sistem akan menampilkan peringatan berupa pesan "Tidak boleh kosong. Coba lagi".
+
+  <img width="670" height="128" alt="image" src="https://github.com/user-attachments/assets/677956e8-ef34-4d7d-bc29-62b201ee3dc0" />
 
 #### 2. Menu Lihat Semua Catatan Keuangan 
 
@@ -256,6 +274,11 @@ Setelah proses Ubah Catatan Keuangan selesai dilakukan, sistem akan menampilkan 
 
   Setelah itu, sistem akan meminta untuk memasukkan ulang nilai nominal dengan format angka yang benar. Begitu input diperbaiki, data transaksi akan berhasil diperbarui dan ditampilkan kembali pada tabel catatan keuangan.
 
+- Pada menu "Ubah Catatan Keuangan", jika mengosongkan inputan yang ingin di update maka nilai lama yang akan dipertahankan
+
+  <img width="1001" height="518" alt="image" src="https://github.com/user-attachments/assets/6668a812-564b-472c-8717-4abb92e583d6" />
+
+
 #### 4. Menu Hapus Catatan Keuangan  
 
 <img width="1015" height="731" alt="image" src="https://github.com/user-attachments/assets/ad4d8bb0-3ad6-4335-b70c-e0edbf303a40" />
@@ -312,6 +335,8 @@ Setelah berhasil menghapus data, sistem akan menampilkan pertanyaan "Apakah Ingi
 > Jika ID diinputkan dalam bentuk huruf (contoh: mengetik "satu" alih-alih angka 1), maka sistem tidak akan menerima input tersebut dan akan menampilkan pesan "Harus angka! Silakan input ulang:".
 >
 > Pesan ini berfungsi sebagai validasi agar ID hanya bisa diinputkan dalam bentuk angka sesuai dengan tabel catatan yang tersedia.
+
+- Pada menu "Hapus Catatan Keuangan", jika kita tidak jadi ingin mengha
 
 #### 5. Menu Ringkasan Saldo
 
@@ -481,7 +506,7 @@ f. Jika menginputkan menu pakai huruf bukan angka
 
 > Ketika menginputkan angka 8 pada menu utama, sistem akan langsung menutup aplikasi Pocket Guard. Sebelum keluar, ditampilkan pesan ucapan terima kasih berupa “Terima kasih telah menggunakan POCKET GUARD” serta doa agar keuangan selalu aman dan terjaga. Dengan begitu, aplikasi benar-benar mengakhiri jalannya program setelah perintah keluar dipilih.
 
-#### 9. Jika Menginputkan Menu Selain Menu 1-8 dan Menginputkan Menu Pakai Huruf Bukan Angka
+#### 9. Jika Menginputkan Menu Selain Menu 1-8, Menginputkan Menu Pakai Huruf Bukan Angka, dan Mengkosongkan inputan pada saat input menu 1-8
 
 <img width="428" height="692" alt="image" src="https://github.com/user-attachments/assets/c950f97e-246e-401c-8553-d2b648cf977c" />
 
@@ -491,5 +516,8 @@ f. Jika menginputkan menu pakai huruf bukan angka
 
 > Selain itu, jika input yang dimasukkan berupa huruf atau teks alih-alih angka, sistem akan menolak dengan menampilkan pesan “Harus angka! Silakan input ulang:” kemudian meminta masukan baru sampai format yang dimasukkan benar berupa angka dalam rentang 1–8.
 
+<img width="404" height="325" alt="image" src="https://github.com/user-attachments/assets/325cdbbe-ea57-43c5-a232-41ac93870e5a" />
+
+> Jika input yang dimasukkan kosong atau bukan angka, sistem akan menolak dengan menampilkan pesan “Harus angka! Silakan input ulang:”, lalu meminta pengguna untuk memasukkan kembali pilihan menu dalam bentuk angka 1–8.
 
 
