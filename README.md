@@ -47,7 +47,7 @@ Secara keseluruhan, Pocket Guard membantu melacak arus kas harian, menjaga kesei
    
    <img width="372" height="206" alt="image" src="https://github.com/user-attachments/assets/b15cf25f-1a5e-48a8-9637-d9dbe106175a" />
 
-> 
+> Pada kelas Transaksi, setiap baris private adalah properti/atribut data milik satu transaksi: id (int) sebagai identitas unik; tanggal (String) untuk waktu transaksi dengan format yyyy-mm-dd; keterangan untuk deskripsi singkat; jenis menandai Pemasukan atau Pengeluaran; kategori mengelompokkan seperti Gaji, Makan, Transportasi, dan lain-lain; metodePembayaran menyatakan Cash/E-Wallet/Transfer; dan jumlah (double) menyimpan nominal. Semua dibuat private untuk enkapsulasi agar akses dan perubahan dilakukan lewat getter–setter, sehingga data aman dan valid.
 
 5. Menerapkan constructor
 6. Menerapkan access modifier
